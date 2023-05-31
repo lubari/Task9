@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace CatalogTests.Models.Responses
 {
-    public class GetBalanceInfoResponse
+    public class GetUserStatusResponse
     {
-        public int Balance { get; set; }
+        public string Status { get; set; }
     }
 }

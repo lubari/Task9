@@ -2,12 +2,12 @@
 
 namespace CatalogTests.Models.Requests
 {
-    internal class CreateChargeRequest
+    public class CreateChargeRequest
     {
         [JsonProperty("userId")]
-        public string UserId;
+        public int UserId;
 
         [JsonProperty("amount")]
-        public string Amount;
+        public double Amount;
     }
 }
