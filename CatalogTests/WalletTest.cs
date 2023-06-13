@@ -1,11 +1,7 @@
 ﻿using CatalogTests.Clients;
 using CatalogTests.Utils;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace CatalogTests
@@ -16,18 +12,18 @@ namespace CatalogTests
         private readonly ChargeGenerator _chargeGenerator = new ChargeGenerator();
 
         [Test]
-        public async Task InvalidUserInfo_CreateUser_StatusCodeIsCreated()
+        public async Task InvalidUserInfo_Charge_StatusCodeIsCreated()
         {
             // Precondition
-            var request = _chargeGenerator.GenerateChargeRequest();
+            var chargeRequest = _chargeGenerator.GenerateChargeRequest();
             // Action
-            var response = await _walletServiceClient.Charge(request);
+            var response = await _walletServiceClient.Charge(chargeRequest);
             // Assert
             Assert.AreEqual(HttpStatusCode.NotFound, response.Status);
         }
 
         [Test]
-        public async Task ValidUserInfo_CreateUser_StatusCodeIsCreated()
+        public async Task ValidUserInfo_ChargeUser_StatusCodeIsCreated()
         {
             // Precondition
             var request = _chargeGenerator.GenerateChargeRequestWithData();
@@ -36,5 +32,19 @@ namespace CatalogTests
             // Assert
             Assert.AreEqual(HttpStatusCode.Created, response.Status);
         }
+
+        [Test]
+        public async Task NewUser_GetBalance_StatusCodeISCreated()
+        {
+            // Precondition
+
+            // Action
+            var response = await _walletServiceClient.GetBalance("123");
+            // Assert
+            Assert.AreEqual(HttpStatusCode.Created, response.Status);
+        }
+
+
+
     }
 }

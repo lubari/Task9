@@ -15,7 +15,7 @@ namespace CatalogTests.Utils
             return new CreateChargeRequest();
         }
 
-        public CreateChargeRequest GenerateChargeRequest(int userId, double amount)
+        public CreateChargeRequest GenerateChargeRequest(int userId, decimal amount)
         {
             return new CreateChargeRequest()
             {
@@ -26,7 +26,7 @@ namespace CatalogTests.Utils
 
         public CreateChargeRequest GenerateChargeRequestWithData()
         {
-            return GenerateChargeRequest(3, 1234.0);
+            return GenerateChargeRequest(3, 1234);
         }
 
     }

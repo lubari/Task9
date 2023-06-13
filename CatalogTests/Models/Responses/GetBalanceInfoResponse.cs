@@ -8,6 +8,6 @@ namespace CatalogTests.Models.Responses
 {
     public class GetBalanceInfoResponse
     {
-        public int Balance { get; set; }
+        public decimal Balance { get; set; }
     }
 }

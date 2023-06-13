@@ -8,6 +8,6 @@ namespace CatalogTests.Models.Requests
         public int UserId;
 
         [JsonProperty("amount")]
-        public double Amount;
+        public decimal Amount;
     }
 }
